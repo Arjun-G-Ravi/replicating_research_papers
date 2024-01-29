@@ -18,11 +18,13 @@ Self-attention, sometimes called intra-attention is an attention mechanism relat
 ## Model Architecture
 
 ## 1. Encoder
+- The one on the left
 - The encoder maps an input sequence of symbol representations to a sequence of continuous representations.
 -The encoder is composed of a stack of N = 6 identical layers. Each layer has two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position wise fully connected feed-forward network. 
 - There is a residual connection around each of the two sub-layers, followed by layer normalization
 
 ## 2. Decoder
+- The one on the right
 - In addition to the two
 sub-layers in each encoder layer, the decoder inserts a third sub-layer, which performs multi-head
 attention over the output of the encoder stack.Similar to the encoder, we employ residual connections
