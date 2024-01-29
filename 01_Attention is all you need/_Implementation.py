@@ -5,6 +5,8 @@ import torch.nn as nn
 
 
 class SelfAttention(nn.Module):
+    ''' Returns the self attention of the transformers. To be used in the transformer_block.
+    '''
     def __init__(self, embed_size, heads):
         super(SelfAttention, self).__init__()
         self.embed_size = embed_size
