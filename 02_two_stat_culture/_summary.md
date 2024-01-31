@@ -22,6 +22,7 @@ Data Modeling Cultures:
 - Uses models that try to learn completely from the stats. Eg: NN, Decision trees
 
 
+The author claims that most of the statisticians fall in the first category, and make wrong assumptions to study the data, which can end up affecting the quality of the study.
 
 
 
