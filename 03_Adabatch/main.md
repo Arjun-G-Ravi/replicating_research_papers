@@ -15,3 +15,4 @@
   - init_batch_size = 128
   - init_lr = 0.1
   - After 20 epochs, lr decays to half and batch_size is doubled.
+- The study shows that increasing the batch size too much and too early during training can lead to poor convergence.
