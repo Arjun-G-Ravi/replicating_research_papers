@@ -7,7 +7,6 @@ The paper presents two novel model architectures: `Continuous Bag-of-Words` (CBO
 
 - The training methodology involves stochastic gradient descent and backpropagation with linearly decreasing learning rates, using Adabatch
 
-
 # Continuous Bag-of-Words Model
 We try to predict a word, given its neighbouring words.
 
@@ -15,13 +14,3 @@ We try to predict a word, given its neighbouring words.
 we use each current word as an input to a log-linear classifier with continuous projection layer, and predict words within a certain range before and after the current word.
 
 ![alt text](image.png)
-
-
-
-
-
-
-
-
-
-
