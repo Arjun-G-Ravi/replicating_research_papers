@@ -8,7 +8,7 @@
 - More precisely, we concatenate the paragraph vector with several word vectors from a paragraph and predict the following word in the given context. 
 - While paragraph vectors are unique among paragraphs, the word vectors are shared. At prediction time, the paragraph vectors are inferred by fixing the word vectors and training the new paragraph vector until convergence.
 
-
+![alt text](image.png)
 
 
 
