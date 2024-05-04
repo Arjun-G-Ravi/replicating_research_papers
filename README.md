@@ -1,2 +1,2 @@
 # replicating_research_papers
-I replicate popular AI-ML based research papers
+I try to read or replicate AI based research papers.
