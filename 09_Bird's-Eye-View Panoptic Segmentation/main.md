@@ -1,9 +1,9 @@
 # Bird's-Eye-View Panoptic Segmentation Using Monocular Frontal View Images
 
 ## What is Panoptic segmentation
-- Instance segmentation is the task of identifying and segmenting individual objects in an image, such as separate people, cars, or animals.
-- Semantic segmentation is the task of assigning a semantic class label to each pixel in an image, such as "person", "road", "sky", etc.
-- Panoptic segmentation combines the tasks of instance segmentation and semantic segmentation into a single, unified framework.
+- `Semantic segmentation` is the task of assigning a semantic class label to `each pixel in an image`, such as "person", "road", "sky", etc.
+- `Instance segmentation` is the task of identifying and segmenting individual objects in an image. Every car will be marked with a different color.
+- `Panoptic segmentation` combines the tasks of instance segmentation and semantic segmentation into a single, unified framework.
 
 ## What problem is the paper trying to solve:
 The paper is trying to create a panoptic segmentation map from a monocualar camera's image.
