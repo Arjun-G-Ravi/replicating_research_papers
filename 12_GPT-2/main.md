@@ -18,4 +18,10 @@ The model is based on the OpenAI GPT architecture with some modifications. Layer
 - The biggest GPT-2 model is 1.7B parameters. It achieves state of the art results on 7 out of 8 tested language modeling datasets
 - demonstrates the potential of large-scale language models like GPT-2 to serve as a kind of "Swiss Army knife" for NLP tasks.
 
-Pg 4, exp
+- The next few sections of the paper describes the performance of the model in various NLP tasks.
+
+
+# Conclusion
+When a large language model is trained on a sufficiently
+large and diverse dataset it is able to perform well across
+many domains and datasets.
