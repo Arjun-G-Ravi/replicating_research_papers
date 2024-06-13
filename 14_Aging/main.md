@@ -30,7 +30,7 @@
 - although current re-aging approaches often fail on real face images they are fine to generate synthetic faces with photorealistic and consistent aging effects.
 - Model used for this is Style-based Age Manipulation(SAM) 
 - 2000 identities, with 14 age groups in the range of 18 to 85
-- 
+
 # FRAN Model
 - Input data
   - Original image
