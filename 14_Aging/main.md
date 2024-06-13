@@ -50,3 +50,11 @@
   - Generator and Discriminator
   
 ![alt text](image-1.png)
+
+# Result
+- Works in diff lighting, with motion blur, etc.
+- Lowest mean identity loss
+- The error is higher for 50+ ages
+- target-map based reaging is also possible
+- graying of scalp hair is not possible
+- BMI changes as aging is not captured
