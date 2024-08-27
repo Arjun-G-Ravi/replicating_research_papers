@@ -25,3 +25,5 @@ The model is based on the OpenAI GPT architecture with some modifications. Layer
 When a large language model is trained on a sufficiently
 large and diverse dataset it is able to perform well across
 many domains and datasets.
+
+![alt text](image.png)
