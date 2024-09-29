@@ -8,7 +8,7 @@
  - Figures out global dependencies between input and output
  - The ability to understand long-range dependencies in the network is far superior to other models
 
-The Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence aligned RNNs or convolution.
+The Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequencially aligned RNNs or convolution.
 
 ## Self attention
 Self-attention, sometimes called intra-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence.
@@ -20,7 +20,7 @@ Self-attention, sometimes called intra-attention is an attention mechanism relat
 ## 1. Encoder
 - The one on the left
 - The encoder maps an input sequence of symbol representations to a sequence of continuous representations.
--The encoder is composed of a stack of N = 6 identical layers. Each layer has two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position wise fully connected feed-forward network. 
+- The encoder is composed of a stack of N = 6 identical layers. Each layer has two sub-layers. The first is a multi-head self-attention mechanism, and the second is a simple, position wise fully connected feed-forward network. 
 - There is a residual connection around each of the two sub-layers, followed by layer normalization
 
 ## 2. Decoder
@@ -58,5 +58,5 @@ Since our model contains no recurrence and no convolution, in order for the mode
 order of the sequence, we must inject some information about the relative or absolute position of the
 tokens in the sequence.In this work, we use sine and cosine functions of different frequencies.
 
-
+A more detailed overview of transformers is available at: https://github.com/Arjun-G-Ravi/AI-Notes/blob/main/04_NLP/10_Transformers.md
 
