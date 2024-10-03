@@ -86,14 +86,40 @@ At the cost of being faster, it faces a loss in expressiveness and accuracy
 
 # 2. Improvements to Positional Representations
 1. Absolute position representations
-2. Relative position representation
-3. Other representations
-4. Position representations without explicit encoding
-5. Position representation on Transformer decoders
+   - In vanilla transformer, positional information is encoded as absolute sinusoidal position encodings
+   - Another way of representing absolute positions is to learn a set of positional embeddings for each position. This works bad when the sequence length is large, but there are even ways around that.
+   - Later works find it beneficial to add position representations to inputs to each Transformer layer, not to token just to embeddings.
 
+2. Relative position representation
+   - Another line of works focuses on representing positional relationships between tokens instead of positions of individual tokens. 
+
+3. Other representations
+   - Some research studies have explored using hybrid positional representations that contains both absolute and relative positional information.
+   - **Rotary Position Embedding (RoPE)**: RoPE is designed to encode relative positions instead of absolute positions, which helps the model generalize better to longer sequences and adapt to various sequence lengths. It uses a form of absolute embedding but can capture relative positional relations.
+ 
+4. Position representations without explicit encoding: Another idea is to encode positional information in word embeddings. 
+
+5. Position representation on Transformer decoders: A model that exploits only the decoder of Transformer has the potential of sensing positional information without incorporating explicit positional representation, bacause they are trained autoregressively with masked attention. 
 
 # 3. Improvements to Layer Normalization
-1. Placement of layer normalization
+1. Placement of layer normalization:
+   - There are two types of placement of Layer Normalisation(LN):
+   ![alt text](image-8.png)
+     1. Pre-Layer Normalization (Pre-LN)
+        - Layer normalization is applied before the sublayers (self-attention and feed-forward layers).
+        - `Output=Sublayer(LayerNorm(x))+x`
+        - Better Gradient Flow(faster training), Easier Convergence, no warmup steps required
+        - Reduced Expressiveness(might limit the sublayer's ability to manipulate the activations)
+     2. Post-Layer Normalization (Post-LN)
+        - Layer normalization is applied after the sublayers (self-attention and feed-forward layers).
+        - `Output=LayerNorm(Sublayer(x)+x)`
+        - This was the original architecture as per Attention is all you need
+        - Although Post-LN often results in unstable training and divergence, it usually outperforms pre-LN variants after convergence
+        - Training Instability, Vanishing Gradient Issues, Requires Warmup steps for ensuring stability
+        - A proper initialization can guarantee stable gradients and better performance
+
+
+
 2. Substitutes of layer normalization
 3. Normalization-free Transformer
 
