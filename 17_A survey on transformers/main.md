@@ -75,12 +75,32 @@ At the cost of being faster, it faces a loss in expressiveness and accuracy
 5. Attention with Prior - The line of research explores supplementing or substituting standard attention with prior attention distributions.
 ![alt text](image-7.png)
 
-1. Improved Multi-Head Mechanism. Multi-head attention is appealing for the ability to jointly attend to information from different representation subspaces at different positions. However, there is no mechanism to guarantee that different attention heads indeed capture distinct features.
-   - **Head behavior modeling**: Line of work is dedicated to improving multi-head mechanism by introducing incorporating more sophisticated mechanisms that guide the behavior of different attention heads or allow interaction across attention heads
-   - **Multi-head with restricted spans**:
-   - **Multi-head with refined aggregation**
-   - **Other modifications**
+6. Improved Multi-Head Mechanism. Multi-head attention is appealing for the ability to jointly attend to information from different representation subspaces at different positions. However, there is no mechanism to guarantee that different attention heads indeed capture distinct features.
+   - **Head behavior modeling**: Line of work is dedicated to improving multi-head mechanism by introducing incorporating more sophisticated mechanisms that guide the behavior of different attention heads or allow interaction across attention heads.
+   - **Multi-head with restricted spans**: Different heads attend to local and broader spans. This can boost efficiency and locality information.
+   Restricting attention spans can be expressed as multiplying each attention distribution value with a mask value and then re-normalize.
+   - **Multi-head with refined aggregation**: After multi-head attention, vanilla transformers concatenates up the representations and then applies a linear transformation. This might not  fully exploit the expressiveness of multi-head attention and that it is more desirable to use a more complex aggregation. Also, there are routing techniqes(dynamic, EM) that can do this.
+   - **Other modifications**: Includes
+     - Multi-query attention: where key–value pairs are shared among attention heads
+     - Small attention key size can affect its ability to represent arbitrary distribution. It is observed empirically that setting attention head size to be input sequence length is beneficial.
 
-# Other module-level modifications
+# 2. Improvements to Positional Representations
+1. Absolute position representations
+2. Relative position representation
+3. Other representations
+4. Position representations without explicit encoding
+5. Position representation on Transformer decoders
+
+
+# 3. Improvements to Layer Normalization
+1. Placement of layer normalization
+2. Substitutes of layer normalization
+3. Normalization-free Transformer
+
+## 4. Fully Connected Network
+1. Activation function in FFN
+2. Adapting FFN for larger capacity
+3. Dropping FFN layers
+
 # Architecture-level variants 
 # Pre-trained Transformers
