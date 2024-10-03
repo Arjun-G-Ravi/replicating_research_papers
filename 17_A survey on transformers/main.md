@@ -129,7 +129,25 @@ At the cost of being faster, it faces a loss in expressiveness and accuracy
 
 ## 4. Fully Connected Network
 1. Activation function in FFN
+   1. ReLU
+      -  `ReLU(x) = max(0,x)`
+      -  Vanilla transformers uses Relu
+   2. Swish function
+      - `Swish(x)=x⋅σ(x)`
+      - observe that it consistently improve performance on WMT 2014 dataset.
+   3. Gaussian Error Linear Unit (GELU)
+      - `GELU(x)=x⋅Φ(x)`
+      - ![alt text](image-9.png)
+      - Used in GPT
+      - It has now become a default practice to use this
+   4. Gated Linear Units (GLU)
+      - `GLU(x)=(x⋅W1) ⊙ σ(x⋅W2)` # ⊙ is element wise multiplication
+      - introduces a gating mechanism to control the flow of information through the network
+      - Helps the model to filter information and learn complex pattern
+      - GLU variants consistently improve vanilla Transformer with ReLU activation
+
 2. Adapting FFN for larger capacity
+   - 
 3. Dropping FFN layers
 
 # Architecture-level variants 
