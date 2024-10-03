@@ -56,11 +56,30 @@ As a side effect, the lack of structural bias makes Transformer prone to overfit
        2. Content-based sparse attention: 
          - Another technique is to create a sparse graph based on input content
          - Includes Reformer, Sparse Adaptive Connection, Sparse Sinkhorn Attention
-2. Linearized Attention. This line of work disentangles the attention matrix with kernel feature maps. The attention is then computed in reversed order to achieve linear complexity.
-3. Prototype and Memory Compression. This class of methods reduces the number of queries or key–value memory pairs to reduce the size of the attention matrix.
-4. Low-rank Self-Attention. This line of work capture the low-rank property of self-attention.
-5. Attention with Prior. The line of research explores supplementing or substituting standard attention with prior attention distributions.
-6. Improved Multi-Head Mechanism. The line of studies explores different alternative multi-head mechanisms.
+
+2. Linearized Attention. 
+This line of work disentangles the attention matrix with kernel feature maps. 
+The attention is then computed in reversed order to achieve linear complexity.
+At the cost of being faster, it faces a loss in expressiveness and accuracy
+![alt text](image-5.png)
+
+3. Query prototype and Memory Compression. This class of methods reduces the number of queries or key–value memory pairs to reduce the size of the attention matrix.
+   - Attention with prototype queries: Several prototypes of queries serve as the main source to compute attention distributions.
+   - Attention with compressed key–value memory: Reduce the complexity by reducing the number of the key–value pairs before applying the attention mechanism
+![alt text](image-6.png)
+
+4. Low-rank Self-Attention - Reduce the computational and memory complexity of the self-attention mechanism in transformers by approximating the attention matrix using low-rank factorization
+   - Low-rank parameterization
+   - Low-rank approximation
+
+5. Attention with Prior - The line of research explores supplementing or substituting standard attention with prior attention distributions.
+![alt text](image-7.png)
+
+1. Improved Multi-Head Mechanism. Multi-head attention is appealing for the ability to jointly attend to information from different representation subspaces at different positions. However, there is no mechanism to guarantee that different attention heads indeed capture distinct features.
+   - **Head behavior modeling**: Line of work is dedicated to improving multi-head mechanism by introducing incorporating more sophisticated mechanisms that guide the behavior of different attention heads or allow interaction across attention heads
+   - **Multi-head with restricted spans**:
+   - **Multi-head with refined aggregation**
+   - **Other modifications**
 
 # Other module-level modifications
 # Architecture-level variants 
