@@ -117,11 +117,15 @@ At the cost of being faster, it faces a loss in expressiveness and accuracy
         - Although Post-LN often results in unstable training and divergence, it usually outperforms pre-LN variants after convergence
         - Training Instability, Vanishing Gradient Issues, Requires Warmup steps for ensuring stability
         - A proper initialization can guarantee stable gradients and better performance
-
-
-
 2. Substitutes of layer normalization
+   - Xu et al. (2019) empirically observe that the learnable parameters in the LN module do not work in most experiments, and even increase the risk of overfitting. They further conclude from controlled experiments that the forward normalization is not the reason why LN works for Transformer. From analysis and experiments, it is concluded that the derivatives of the mean and variance re-center and re-scale the gradients and play a significant role in LN. They thus propose AdaNorm, a normalization technique without learnable parameters
+   - PowerNorm (PN) that has three modifications over Batch Norm:
+     1. it relaxes the zero-mean normalization; 
+     2. it uses the quadratic mean of the signal, instead of the variance; 
+     3. it uses running statistics for the quadratic mean, instead of using per-batch statistics.
 3. Normalization-free Transformer
+  - ReZero replace LN module with a learnable residual connection
+  - Replacing LN in Transformer with ReZero mechanism is verified to induce better dynamic isometry for input signals and leads to faster convergence.
 
 ## 4. Fully Connected Network
 1. Activation function in FFN
