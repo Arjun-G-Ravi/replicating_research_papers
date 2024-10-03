@@ -147,8 +147,18 @@ At the cost of being faster, it faces a loss in expressiveness and accuracy
       - GLU variants consistently improve vanilla Transformer with ReLU activation
 
 2. Adapting FFN for larger capacity
-   - 
+   - replace some of the FFNs with the product-key memory layers
+   - sparsely-gated **Mixture of Experts** layers to replace FFNs in Transformer. Each MoE layer consists of several FFNs (each called an expert) that are the same structure as position-wise FFNs in vanilla Transformer. The output of the layer is a weighted sum of the outputs of the FFNs, using gate values computed by a routing function `𝑔(⋅)`. They design a learnable routing function that assigns tokens to experts, with auxiliary loss to satisfy balanced loads between experts and efficiency at the scale of length such that the experts can be distributed across multiple devices. For each forward pass of the MoE layer, only the experts with top-𝑘 gate values are activated.
+   - Switch Transformer proposes to route using only a single expert with the largest gate value, leading to a much smaller computational footprint. It is reported to speed up pre-training by a large margin compared to the non-MoE counterpart while having a similar number of FLOPS.
+   - hash layers show competitive results with existing methods such as Switch Transformer with no routing parameters or any auxiliary loss function
+  
 3. Dropping FFN layers
+   - replacing the ReLU activation with Softmax and dropping the bias term in FFN effectively turns FFN into an attention module where position-wise inputs attend to a global key–value memory. This approach simplifies the structure of the network with no loss of performance.
+   - Another paper empirically show that FFNs in the decoder of Transformer, despite its large number of parameters, is not efficient and can be removed safely with only slight or no loss of performance. This approach significantly boosts the training and inference speed.
 
-# Architecture-level variants 
+# Architecture-level variants
+    # Skipped to tomorrow
+
 # Pre-trained Transformers
+Unlike convolutional neural networks (CNNs) that assume spatial locality in images (nearby pixels are related) or recurrent neural networks (RNNs) that assume temporal dependencies (previous elements influence future elements), transformers do not make such assumptions.
+This can be good(let transformers learn anything) or bad(overfit on the given data).
