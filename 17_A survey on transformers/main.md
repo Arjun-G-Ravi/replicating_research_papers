@@ -153,11 +153,54 @@ At the cost of being faster, it faces a loss in expressiveness and accuracy
    - hash layers show competitive results with existing methods such as Switch Transformer with no routing parameters or any auxiliary loss function
   
 3. Dropping FFN layers
-   - replacing the ReLU activation with Softmax and dropping the bias term in FFN effectively turns FFN into an attention module where position-wise inputs attend to a global key–value memory. This approach simplifies the structure of the network with no loss of performance.
+   - replacing the ReLU activation with Softmax and dropping the bias term in FFN effectively turns FFN into an attention module where position-wise inputs attend to a global key-value memory. This approach simplifies the structure of the network with no loss of performance.
    - Another paper empirically show that FFNs in the decoder of Transformer, despite its large number of parameters, is not efficient and can be removed safely with only slight or no loss of performance. This approach significantly boosts the training and inference speed.
 
 # Architecture-level variants
-    # Skipped to tomorrow
+1. Lightweight transformers
+   - `Lite Transformer`(suitable for mobile devices) proposes to replace each attention module in Transformer with a two-branch structure, where one branch uses attention to capture long-range contexts while the other branch uses depth-wise convolution and linear layers to capture local dependencies
+   - `Funnel Transformer` utilizes a funnel-like encoder architecture where the length of the hidden sequence is gradually reduced using pooling along the sequence dimension, and then recovered using up-sampling. Reduces FLOPS and memory.
+   - `DeLighT` replaces the standard Transformer block with DeLighT block.
+     They also propose a block-wise scaling strategy that allows for shallower and narrower blocks near the input and wider and deeper blocks near the output.
+     The induced network is much deeper than the vanilla Transformer but with fewer parameters and operations.
+     The DeLighT block includes
+        1. a “expand-and-reduce” DeLighT transformation module to learn wider representations with low computation requirements
+        2. a single-head self-attention to learn pair-wise interaction; 
+        3. a lightweight “reduce-and-expand” FFN.     
+
+2. Strengthening cross-block connectivity
+   - Realformer and Predictive Attention Transformer reuses attention distributions from previous block to guide attention of current block. This can be seen as creating a forward path between adjacent Transformer blocks.
+   - In a `Deep Transformer encoder–decoder` model, the cross-attention modules in the decoder only utilize the final outputs of the encoder, therefore the error signal will have to traverse along the depth of the encoder (potential gradient issues)
+   - `Transparent Attention` uses a weighted sum of encoder representations at all encoder layers (including the embedding layer) in each cross-attention module.
+   - `Feedback Transformer` proposes to add a feedback mechanism to Transformer decoder, where each position attends to a weighted sum of history representations from all layers
+
+3. Adaptive computation time
+   - An intriguing and promising modification is to make computation time conditioned on the inputs - to introduce Adaptive Computation Time (ACT) into Transformer models. 
+   - `Universal Transformer` (UT) incorporates a recurrence-over-depth mechanism that iteratively refines representations for all symbols using a module that is shared over depth
+   ![alt text](image-11.png)
+   - `Conditional Computation Transformer` adds a gating module at each self-attention and feed-forward layer to decide whether to skip the current layer
+   ![alt text](image-12.png)
+   - There is a line of work dedicated to adapting the number of layers to each input in order to achieve a good speed-accuracy trade-off, which is called `early exit mechanism`
+   ![alt text](image-13.png)
+
+4. Transformers with divide-and-conquer strategies
+   ![alt text](image-14.png)
+   1. Recurrent Transformers
+      - In recurrent Transformers, a cache memory is maintained to incorporate the history information.
+      - `Transformer-XL` address the limitation of a fixed length context by caching representations from the previous segment and reuse it as an extended context when the model processes the current segment.
+      - `Compressive Transformer` extends this idea further by extending the cache with two levels of memory
+      - `Memformer`  extends the recurrence mechanism from decoder-only architecture to an encoder–decoder architecture
+   2. Hierarchical Transformers
+      - Low-level features are first fed to a Transformer encoder, producing output representations that are then aggregated (using pooling or other operations) to form a high-level feature, which is then processed by a high-level Transformer. 
+      - Hierarchical modeling allows the model to handle long inputs with limited resources
+      - It has the potential to generate richer representations that are beneficial to tasks.
+
+5. Exploring alternative architecture
+   - One research interpret Transformer as a numerical Ordinary Differential Equation (ODE) solver for a convection–diffusion equation in a multi-particle dynamic system and design Macaron Transformer, which replaces each Transformer block with a FFN-attention-FFN variant.
+   - Sandwich Transformer explores reorganizing attention modules and FFN modules such that attention modules are mainly located in lower layers and FFN modules in upper layers. The induced model improves perplexity on multiple languages.
+   - Mask Attention Network (MAN) 
+   - Notably, there is a line of work that uses Neural Architecture Search (NAS) to search for alternative Transformer architectures.
+     - The Evolved Transformer (ET)employs evolution-based architecture search with the standard Transformer architecture seeding the initial population. The searched model demonstrates consistent improvement over Transformer on several language tasks.
 
 # Pre-trained Transformers
 Unlike convolutional neural networks (CNNs) that assume spatial locality in images (nearby pixels are related) or recurrent neural networks (RNNs) that assume temporal dependencies (previous elements influence future elements), transformers do not make such assumptions.
