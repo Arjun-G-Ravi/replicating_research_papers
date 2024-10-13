@@ -1,6 +1,6 @@
 # A survey on Transformers
 ### - Tianyang Lin, Yuxin Wang , Xiangyang Li, Xipeng Qiu
-https://www.sciencedirect.com/science/article/pii/S2666651022000146#sec1
+https://arxiv.org/abs/2106.04554
 ￼
 # Introduction
 - X-former is a term often used as shorthand for transformer

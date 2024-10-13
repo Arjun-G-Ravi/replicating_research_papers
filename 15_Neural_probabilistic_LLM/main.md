@@ -1,9 +1,17 @@
 # A Neural Probabilistic Language Model
 ### Yoshua Bengio, 2003
 
-- The paper attempt to create a  model learns simultaneously `(1) a distributed representation for each word along with (2) the probability function for word sequences,`expressed in terms of these representations.
+- The paper attempt to create a  model learns simultaneously 
+  - 1. a distributed representation for each word (embeddings)
+  - 2. the probability function for word sequences (model)
+  
+  expressed in terms of these representations.
+
 - Statistical methods , like n-gram, work fine. But the model gets more complex as vocabulory increases. It also doesnt take into account similarity of words, when predicting.
+
 - We can reduce the curse of dimensionality by using distributional representation(embeddings)
+
+- When building statistical models of natural language, one considerably reduces the difficulty of this modeling problem by taking advantage of word order, and the fact that temporally closer words in the word sequence are statistically more dependent.
 
 ### The proposed approach
 1. associate with each word in the vocabulary a distributed word feature vector (a real-valued vector in Rm ),
