@@ -19,3 +19,4 @@
 3. learn simultaneously the word feature vectors and the parameters of that probability function.
 
 We use embedding to represent words in a lower dimension. In the proposed model, it will so generalize because “similar” words are expected to have a similar feature vector, and because the probability function is a smooth function of these feature values, a small change in the features will induce a small change in the probability.
+![alt text](image.png)
