@@ -18,7 +18,6 @@
 - This is about reading pretty much every line in the paper
 - When reading a paper in this stage, look for faults/ imporovements to the paper.
 - Read everything except the mathematical part of the paper
-- Rubber duck
 
 ### STAGE 4(A): Complex mathematics in the paper
 - Take out the mathematical part of the 
@@ -31,3 +30,7 @@
 
 - If template code is not available/ i want to code it myself
   - Maybe work on google colab if a lot of init testing is needed: https://colab.google/
+
+### STAGE 5: Rubber duck
+- Clearly explain the paper to a rubber duck
+- Painful processs
