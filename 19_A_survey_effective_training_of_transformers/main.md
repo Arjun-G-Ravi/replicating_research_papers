@@ -31,3 +31,26 @@ http://arxiv.org/abs/2302.01107
 - Overparameterisation
   - It is observed that overparameterization empirically improves both convergence and generalization, with theoretical guarantee though not sufﬁcient.
 - Large batch size
+- Incremental learning
+  - The high-level concept of incremental learning is relaxing the original challenging optimization problem into a sequence of easy-to-optimize sub-problems, where thessolution of one sub-problem can serve as a good initialization to the subsequent one to circumventsthe training difﬁculty, in analogy with annealing.
+- Token masking.
+- Importance sampling/ data pruning
+  
+# Memory Efﬁciency
+- Parallelism
+  - Data Parallelism (DP) which distributes a minibatch of data across different devices
+    - DP itself is only suitable for training small to moderate models
+  - Model Parallelism (MP) which allocates subgraphs of a model across multiple workers.
+    - Tensor Parallelism (TP)
+    - Pipeline Parallelism (PP) 
+- Quantized training 
+  - quantized training trains neural networks from scratch in reduced precision by compressing the activations/weights/gradients into low-bit values
+  - automatic mixed-precision - AMP stores a master copy of weights in full-precision for updates while the activations, gradients and weights are stored in FP16 for arithmetic.
+- Rematerialization and ofﬂoading
+- Parameter-efﬁcient tuning
+
+# Hardware/Algorithm Co-design
+- Efﬁcient attention
+- Hardware-aware low-precision
+- Sparse matrix multiplication
+
