@@ -8,11 +8,12 @@
 
 ## STAGE 2: Understanding the gist of the paper
 - Read abstract, conclusion
-- Read summaries/ blogs about the paper (most likely easy read)
-- Use chatgpt to generate a summary about the paper. Ask question and understand
-- Read introduction
-- See tables and images
-- Skim read the full paper
+- if paper is long
+  - Read summaries/ blogs about the paper (most likely easy read)
+  - Use chatgpt to generate a summary about the paper. Ask question and understand
+  - Read introduction
+- If paper is short
+  - Skim read the full paper
 
 ## STAGE 3: In-depth reading
 - This is about reading pretty much every line in the paper
