@@ -1,10 +1,12 @@
+# HOW TO READ A PAPER
 `At the end of each stage, decide if I want to move on to next reading stage`
 
-## STAGE 1: Deciding if i want to read the paper
+## STAGE 1: Deciding if i want to even read the paper
 - Very high level skim over
   - abstract, conclusion
   - all headings
   - images, graphs
+  - maybe some external general sources on this paper
 
 ## STAGE 2: Understanding the gist of the paper
 - Read abstract, conclusion
@@ -20,18 +22,18 @@
 - When reading a paper in this stage, look for faults/ imporovements to the paper.
 - Read everything except the mathematical part of the paper
 
-### STAGE 4(A): Complex mathematics in the paper
+### STAGE 4(A): if complex mathematics in the paper
 - Take out the mathematical part of the 
 
-### STAGE 4(B): Implement the paper in code
-- Can be done during stage 3
+### STAGE 4(B): if you want ot implement the paper as code
 - If template code is available
   - Learn the structure, where are the important codes, etc.
-  - Work on google colab: https://colab.google/
+  - Work on google colab for easy installs and setup: https://colab.google/
 
 - If template code is not available/ i want to code it myself
   - Maybe work on google colab if a lot of init testing is needed: https://colab.google/
+  - Switch to local system if I am sure that I will work for a long time
 
 ### STAGE 5: Rubber duck
-- Clearly explain the paper to a rubber duck
-- Painful processs
+- Clearly explain the paper to a rubber duck or Make a youtube video on the paper
+- Painful process
