@@ -1,4 +1,4 @@
-# HOW TO READ A PAPER
+# HOW TO READ A PAPER - The 5 stage technique
 `At the end of each stage, decide if I want to move on to next reading stage`
 
 ## STAGE 1: Deciding if i want to even read the paper
@@ -23,9 +23,10 @@
 - Read everything except the mathematical part of the paper
 
 ### STAGE 4(A): if complex mathematics in the paper
-- Take out the mathematical part of the 
+- Take out the mathematical part of the paper and work on it individually, slowly
+- Very slow and painful process
 
-### STAGE 4(B): if you want ot implement the paper as code
+### STAGE 4(B): if you want to implement the paper as code
 - If template code is available
   - Learn the structure, where are the important codes, etc.
   - Work on google colab for easy installs and setup: https://colab.google/
