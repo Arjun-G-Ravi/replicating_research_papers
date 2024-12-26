@@ -27,7 +27,7 @@ Self-attention, sometimes called intra-attention is an attention mechanism relat
 - The one on the right
 - In addition to the two
 sub-layers in each encoder layer, the decoder inserts a third sub-layer, which performs multi-head
-attention over the output of the encoder stack.Similar to the encoder, we employ residual connections
+attention over the output of the encoder stack. Similar to the encoder, we employ residual connections
 around each of the sub-layers, followed by layer normalization
 - We also modify the self-attention
 sub-layer in the decoder stack to prevent positions from attending to subsequent positions. This
@@ -41,22 +41,17 @@ predictions for position i can depend only on the known outputs at positions les
 ![Alt text](<Screenshot from 2023-11-18 20-37-28.png>)
 
 ### Multiheaded attention
-Instead of performing a single attention function with dmodel -dimensional keys, values and queries,
+Instead of performing a single attention function with d-dimensional keys, values and queries,
 we found it beneficial to linearly project the queries, keys and values h times with different, learned
-linear projections to dk , dk and dv dimensions, respectively.On each of these projected versions of
+linear projections to dq , dk and dv dimensions, respectively. On each of these projected versions of
 queries, keys and values we then perform the attention function in parallel, yielding dv -dimensional output values. These are concatenated and once again projected, resulting in the final values, as depicted in Figure
 
 ![Alt text](<Screenshot from 2023-11-18 21-10-04.png>)
 
-In "encoder-decoder attention" layers, the queries come from the previous decoder layer,
-and the memory keys and values come from the output of the encoder. This allows every
-position in the decoder to attend over all positions in the input sequence.
+In "encoder-decoder attention" layers, the queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder. This allows every position in the decoder to attend over all positions in the input sequence.
 
 ## Positional Encoding
 
-Since our model contains no recurrence and no convolution, in order for the model to make use of the
-order of the sequence, we must inject some information about the relative or absolute position of the
-tokens in the sequence.In this work, we use sine and cosine functions of different frequencies.
+Since our model contains no recurrence and no convolution, in order for the model to make use of the order of the sequence, we must inject some information about the relative or absolute position of the tokens in the sequence. In this work, we use sine and cosine functions of different frequencies.
 
 A more detailed overview of transformers is available at: https://github.com/Arjun-G-Ravi/AI-Notes/blob/main/04_NLP/10_Transformers.md
-
