@@ -14,8 +14,9 @@
   - Read summaries/ blogs about the paper (most likely easy read)
   - Use chatgpt to generate a summary about the paper. Ask question and understand
   - Read introduction
-- If paper is short
+- If paper is short, do one of the following
   - Skim read the full paper
+  - Skip to next stage
 
 ## STAGE 3: In-depth reading
 - This is about reading pretty much every line in the paper
