@@ -23,3 +23,40 @@ Weight Decomposition: Assume the weight matrix 𝑊 of a pre-trained model is up
 ![alt text](image.png)
 
 Then we train only A and B.
+![alt text](image-1.png)
+
+
+![alt text](image-2.png)
+
+
+
+
+
+###     LoRA possesses several key advantages.
+• A pre-trained model can be shared and used to build many small LoRA modules for dif-
+ferent tasks. We can freeze the shared model and efﬁciently switch tasks by replacing the
+matrices A and B in Figure 1, reducing the storage requirement and task-switching over-
+head signiﬁcantly.
+
+• LoRA makes training more efﬁcient and lowers the hardware barrier to entry by up to 3
+times when using adaptive optimizers since we do not need to calculate the gradients or
+maintain the optimizer states for most parameters. Instead, we only optimize the injected,
+much smaller low-rank matrices.
+
+• Our simple linear design allows us to merge the trainable matrices with the frozen weights
+when deployed, introducing no inference latency compared to a fully ﬁne-tuned model, by
+construction.
+
+# Earlier methods
+1. Adapter Layers
+- Adapter layers are additional trainable layers inserted into a pre-trained model. They allow task-specific fine-tuning without modifying the model's original parameters.
+- Small neural network modules (adapter layers) are added between the layers of the pre-trained model.During fine-tuning, only the adapter layers are trained, while the rest of the model remains frozen.
+- Adapter Layers Introduce Inference Latency
+- This problem gets worse when we need to shard the model
+- 
+
+2. Optimizing Input Layer Activations
+- Modify activations by appending task-specific embeddings or prompts to the input.
+- These additional parameters are the only ones trained, while the model weights remain frozen.
+- Directly Optimizing the Prompt is Hard
+- 
