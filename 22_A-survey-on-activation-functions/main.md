@@ -32,7 +32,7 @@ translation along with PReLU, LiSHT, SRS and PAU.
 - squashes to [-1,1]
 - Tanh function is computationally inefﬁcient because it involves the computa-
 tion of exponential multiple times
-![alt text](image-1.png)
+ ![alt text](image-1.png)
 1. ReLU
 - simple, high performance
 - relu(x) = max(0,x)
@@ -49,9 +49,8 @@ unbounded output
 - Better than relu in many cases
 - However, it can lead to overﬁtting easily which is the down-
 side of PReLU.
-- 
-5. 
-6. Exponential Unit Based Activation Functions
+. 
+2. Exponential Unit Based Activation Functions
 - proper utilisation of large + and -ve numbers
 - The Exponential Linear Unit (ELU) [27] based AF utilizes the negative
 values with the help of the exponential function.
