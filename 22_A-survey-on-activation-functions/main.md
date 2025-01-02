@@ -52,8 +52,12 @@ side of PReLU.
 . 
 2. Exponential Unit Based Activation Functions
 - proper utilisation of large + and -ve numbers
-- The Exponential Linear Unit (ELU) [27] based AF utilizes the negative
-values with the help of the exponential function.
+
+3.The Exponential Linear Unit (ELU)
+- based AF utilizes the negative values with the help of the exponential function.
+- ![alt text](image-3.png)
+- α is a learnable parameter.
+- 
  
 1. Learning/Adaptive Activation FunctionsLearning/Adaptive Activation Functions:
 - contains learnable parameters
