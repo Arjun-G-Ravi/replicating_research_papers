@@ -16,14 +16,14 @@ the non-linearly separable input data into more linearly separable abstract feat
 - poor convergence
 - squashes to (0,1)
 
-1. tanh function
+2. tanh function
 - exhibited zero centric property, better convergence
 - squashes to [-1,1]
 - Tanh function is computationally inefﬁcient because it involves the computa-
 tion of exponential multiple times
  ![alt text](image-1.png)
 
-1. ReLU
+3. ReLU
 - simple, high performance
 - relu(x) = max(0,x)
 -Various variants
@@ -36,31 +36,30 @@ unbounded output
 - the slope for negative input as a trainable parameter
 - ![alt text](image-2.png)
 - Better than relu in many cases
-- However, it can lead to overﬁtting easily which is the down-
-side of PReLU.
-. 
-2. Exponential Unit Based Activation Functions
+- However, it can lead to overﬁtting easily which is the downside of PReLU.
+
+5. Exponential Unit Based Activation Functions
 - proper utilisation of large + and -ve numbers
 - The exponential AFs generally lead to the increased non-linearity due to utilization of the negative values.
 
-3. The Exponential Linear Unit (ELU)
+6. The Exponential Linear Unit (ELU)
 - based AF utilizes the negative values with the help of the exponential function.
 - ![alt text](image-3.png)
 - α is a learnable parameter.
 
   
-1. Swish
+7. Swish
    - adaptive function
    - Swish(x) = x*Sigmoid(β*x)
    - Based on the learnt value of β the shape of the Swish AF is adjusted between the linear and ReLU functions.
    - can work on very complex problems
 
-2. GELU
+8. GELU
    - Gaussian Error Linear Unit
    - GELU(x) = x * P(X ≤ x).
    - The complexity of GELU increases due to use of probabilistic nature. 
 
-3. PAU
+9. PAU
         - Pad´e Activation Unit
         - PAU(x) = P(x)/ Q(x)
         - 
