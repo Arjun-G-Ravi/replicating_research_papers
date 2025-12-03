@@ -46,7 +46,6 @@ unbounded output
 - based AF utilizes the negative values with the help of the exponential function.
 - ![alt text](image-3.png)
 - α is a learnable parameter.
-
   
 7. Swish
    - adaptive function

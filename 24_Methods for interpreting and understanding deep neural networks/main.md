@@ -5,18 +5,13 @@
 
 # Interpretability
 - increase the trust in the model
-- . An interpretation is the mapping of an abstract con-
-cept (e.g. a predicted class) into a domain that the human can
-make sense of.
+- An interpretation is the mapping of an abstract concept (e.g. a predicted class) into a domain that the human can make sense of.
 
 # Activation maximization
 Activation maximization is an analysis framework that searches for an input pattern that produces a maximum model response for a quantity of interest
 
-
-
-
 # summary from chatgpt
-Summary of the Paper: Methods for Interpreting and Understanding Deep Neural Networks
+Methods for Interpreting and Understanding Deep Neural Networks
 Deep neural networks (DNNs) have achieved remarkable success in various domains, but their black-box nature presents challenges for trust, reliability, and accountability. This paper provides a comprehensive review of methods for interpreting and understanding DNNs, categorized into three main approaches: feature-based, example-based, and model-based methods.
 
 1. Feature-Based Interpretation
